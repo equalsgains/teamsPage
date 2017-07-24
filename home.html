@@ -3,10 +3,6 @@
 <link rel="stylesheet" href="https://community.canvaslms.com/resources/statics/267571/bootstrap.min.css?a=1500842953198">
 
 <style>
-    body {
-        font-family: "Lato", sans-serif;
-    }
-
     .btn:focus,
     btn:active {
         outline: none !important;
@@ -27,8 +23,8 @@
 
     .btn-nav:hover {
         background-color: rgba(255, 255, 255, 0.3);
-        width: 117px;
-        height: 117px;
+        width: 105px;
+        height: 105px;
         border-radius: 50% !important;
         color: #f2f2f2;
         text-shadow: 1px 1px 1px #000;
@@ -47,8 +43,6 @@
         margin: 0 5px;
         float: none;
         display: inline-block;
-        width: 117px;
-        height: 117px;
         transition: 500ms;
     }
 
@@ -56,13 +50,6 @@
         margin: 0 5px;
         float: none;
         display: inline-block;
-        width: 117px;
-        height: 117px;
-    }
-
-    div.div-active {
-        width: 117px;
-        height: 117px;
     }
 
     .container-nav {
@@ -93,6 +80,22 @@
         background: -webkit-linear-gradient(to right, #ffc0cb, #800080);
         background: linear-gradient(to right, #ffc0cb, #800080);
     }
+
+    .statsList {
+        background: #800080;
+        background: -webkit-linear-gradient(to bottom, #ffc0cb, #800080);
+        background: linear-gradient(to bottom, #ffc0cb, #800080);
+    }
+
+    .statsList li {
+        height: 50px;
+        border-bottom: 1px solid black;
+        list-style: none;
+        color: #f2f2f2;
+        text-shadow: 1px 1px 1px #000;
+        padding-top: 15px;
+        cursor: pointer;
+    }
 </style>
 <link rel="stylesheet" href="https://community.canvaslms.com/resources/statics/267571/bootstrap.min.css?a=1500842953198">
 
@@ -103,22 +106,22 @@
             <button onclick="tabs( homeSection, homeTab )" class="btn btn-nav btn-active" id="homeTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/waterbearicon?a=1500851837009">HOME</button>
         </div>
         <div class="col-md-1 col-lg-1">
-            <button class="btn btn-nav btn"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/statsicon.png?a=1500853951115">STATS</button>
+            <button onclick="tabs( stats, statsTab )" class="btn btn-nav btn" id="statsTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/statsicon.png?a=1500853951115">STATS</button>
         </div>
         <div class="col-md-1 col-lg-1">
-            <button class="btn btn-nav btn"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/scheduleicon.png?a=1500853250672">SHIFTS</button>
+            <button onclick="tabs( shifts, shiftsTab )" class="btn btn-nav btn" id="shiftsTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/scheduleicon.png?a=1500853250672">SHIFTS</button>
         </div>
         <div class="col-md-1 col-lg-1">
             <button onclick="tabs( jiras, jiraTab )" class="btn btn-nav btn" id="jiraTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/jiraicon.png?a=1500853040456">JIRAS</button>
         </div>
         <div class="col-md-1 col-lg-1">
-            <button class="btn btn-nav"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/helpicon.png?a=1500852698990">HELP</button>
+            <button onclick="tabs( help, helpTab )" class="btn btn-nav" id="helpTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/helpicon.png?a=1500852698990">HELP</button>
         </div>
         <div class="col-md-1 col-lg-1">
-            <button class="btn btn-nav"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/teamicon.png?a=1500853735169">TEAM</button>
+            <button onclick="tabs( team, teamTab )" class="btn btn-nav" id="teamTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/teamicon.png?a=1500853735169">TEAM</button>
         </div>
         <div class="col-md-1 col-lg-1">
-            <button class="btn btn-nav"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/emailsicon.png?a=1500854211964">EMAILS</button>
+            <button onclick="tabs( emails, emailsTab )" class="btn btn-nav" id="emailsTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/emailsicon.png?a=1500854211964">EMAILS</button>
         </div>
     </div>
 </div>
@@ -136,8 +139,23 @@
 </section>
 <!-- end of home section -->
 
+<!-- stats section -->
+<section id="stats">
+    <div class="container stats-container">
+        <ul class="statsList">
+            <li>June</li>
+            <li>July</li>
+            <li>August</li>
+        </ul>
+    </div>
+</section>
+<!-- end of stats section -->
 
-
+<!-- shifts section -->
+<section id="shifts">
+    <h1>shifts</h1>
+</section>
+<!-- end of shifts section -->
 
 <!-- jiras section  -->
 <section id="jiras">
@@ -146,6 +164,24 @@
     </div>
 </section>
 <!-- end of jiras section -->
+
+<!-- help section -->
+<section id="help">
+    <h1>help</h1>
+</section>
+<!-- end of help section -->
+
+<!-- team section -->
+<section id="team">
+    <h1>Team section</h1>
+</section>
+<!-- end of team section -->
+
+<!-- emails section -->
+<section id="emails">
+    <h1>emails section</h1>
+</section>
+<!-- end of emails section -->
 
 <script src="https://community.canvaslms.com/resources/statics/267571/jquery-3.2.1.min.js?a=1500843061063">
 
@@ -157,7 +193,7 @@
         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
             $('.nav-row').fadeOut('slow');
         } else {
-            $('.nav-row').fadeIn(1000);
+            $('.nav-row').fadeIn('fast');
 
         }
     }
