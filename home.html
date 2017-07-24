@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://community.canvaslms.com/resources/statics/267571/bootstrap.min.css?a=1500842953198">
+
+<style>
+    body {
+        font-family: "Lato", sans-serif;
+    }
+
+    .btn:focus,
+    btn:active {
+        outline: none !important;
+    }
+
+    .btn-nav {
+        background-color: transparent;
+        width: 100px;
+        height: 100px;
+        border-radius: 50% !important;
+        transition: 500ms;
+        border: 3px solid #fe5aa4 !important;
+        color: #f2f2f2;
+        text-shadow: 1px 1px 1px #000;
+    }
+
+
+
+    .btn-nav:hover {
+        background-color: rgba(255, 255, 255, 0.3);
+        width: 117px;
+        height: 117px;
+        border-radius: 50% !important;
+        color: #f2f2f2;
+        text-shadow: 1px 1px 1px #000;
+        transition: 500ms;
+        border: 2px solid white !important;
+    }
+
+
+    .btn-active {
+        background-color: #fe5aa4;
+        width: 100px;
+        height: 100px;
+    }
+
+    div.col-lg-1 {
+        margin: 0 5px;
+        float: none;
+        display: inline-block;
+        width: 117px;
+        height: 117px;
+        transition: 500ms;
+    }
+
+    div.col-lg-1:hover {
+        margin: 0 5px;
+        float: none;
+        display: inline-block;
+        width: 117px;
+        height: 117px;
+    }
+
+    div.div-active {
+        width: 117px;
+        height: 117px;
+    }
+
+    .container-nav {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+        position: fixed;
+        padding-top: 20px;
+    }
+
+    .icon {
+        width: 30px;
+    }
+
+    .iframe-container {
+        text-align: center;
+    }
+
+    .hideItem {
+        margin: 10px;
+        display: none;
+    }
+
+    .nav-row {
+        height: 150px;
+        box-shadow: 0 8px 6px -6px black;
+        background: #800080;
+        background: -webkit-linear-gradient(to right, #ffc0cb, #800080);
+        background: linear-gradient(to right, #ffc0cb, #800080);
+    }
+</style>
+<link rel="stylesheet" href="https://community.canvaslms.com/resources/statics/267571/bootstrap.min.css?a=1500842953198">
+
+<!-- navigation -->
+<div class="row nav-row">
+    <div class="container-nav">
+        <div class="col-md-1 col-lg-1 div-active">
+            <button onclick="tabs( homeSection, homeTab )" class="btn btn-nav btn-active" id="homeTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/waterbearicon?a=1500851837009">HOME</button>
+        </div>
+        <div class="col-md-1 col-lg-1">
+            <button class="btn btn-nav btn"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/statsicon.png?a=1500853951115">STATS</button>
+        </div>
+        <div class="col-md-1 col-lg-1">
+            <button class="btn btn-nav btn"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/scheduleicon.png?a=1500853250672">SHIFTS</button>
+        </div>
+        <div class="col-md-1 col-lg-1">
+            <button onclick="tabs( jiras, jiraTab )" class="btn btn-nav btn" id="jiraTab"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/jiraicon.png?a=1500853040456">JIRAS</button>
+        </div>
+        <div class="col-md-1 col-lg-1">
+            <button class="btn btn-nav"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/helpicon.png?a=1500852698990">HELP</button>
+        </div>
+        <div class="col-md-1 col-lg-1">
+            <button class="btn btn-nav"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/teamicon.png?a=1500853735169">TEAM</button>
+        </div>
+        <div class="col-md-1 col-lg-1">
+            <button class="btn btn-nav"><img class="icon" src="https://community.canvaslms.com/resources/statics/267571/emailsicon.png?a=1500854211964">EMAILS</button>
+        </div>
+    </div>
+</div>
+
+<hr>
+<!-- end of navigation -->
+
+<!-- home section -->
+<section id="homeSection">
+    <div class="iframe-container">
+        <iframe align="center" frameborder="0" height="1050" scrolling="no" seamless="yes" src="https://docs.google.com/a/instructure.com/spreadsheets/d/e/2PACX-1vTl_LWkPx_s2RRWdPylup5m4GKdj_NBaNSbmtDJAOUu9e7KXbJcicZAR1Y0sy50CtS61mZVsk3l-aV0/pubhtml?gid=761552034&single=true&widget=false&chrome=false"
+            width="820">
+        </iframe>
+    </div>
+</section>
+<!-- end of home section -->
+
+
+
+
+<!-- jiras section  -->
+<section id="jiras">
+    <div class="iframe-container">
+        <iframe src="https://instructure.atlassian.net/plugins/servlet/Wallboard/?dashboardId=29311" width="100%" height="1200"></iframe>
+    </div>
+</section>
+<!-- end of jiras section -->
+
+<script src="https://community.canvaslms.com/resources/statics/267571/jquery-3.2.1.min.js?a=1500843061063">
+
+</script>
+<script>
+    window.onscroll = function () { myFunction() };
+
+    function myFunction() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            $('.nav-row').fadeOut('slow');
+        } else {
+            $('.nav-row').fadeIn(1000);
+
+        }
+    }
+    $('section').not('#homeSection').each(function () {
+        $(this).fadeOut('fast');
+    });
+    $('#homeSection').fadeIn('fast');
+    function tabs(element, tab) {
+        console.log(element);
+        $('section').each(function () {
+            $(this).fadeOut('fast');
+        });
+        $('button').each(function () {
+            $(this).removeClass('btn-active');
+        });
+        $('div-active').each(function () {
+            $(this).removeClass('div-active');
+
+        });
+        $(element).fadeIn('slow');
+        $(tab).addClass('btn-active');
+    };
+
+</script>
