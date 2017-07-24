@@ -66,6 +66,11 @@
 
     .iframe-container {
         text-align: center;
+        overflow: scroll;
+    }
+
+    .iframe-container-jiras {
+        height: 1300px;
     }
 
     .hideItem {
@@ -95,6 +100,17 @@
         text-shadow: 1px 1px 1px #000;
         padding-top: 15px;
         cursor: pointer;
+        overflow: scroll;
+    }
+
+    .container-help {
+        margin: 0;
+        padding: 0;
+    }
+
+    .left-container {
+        width: 350px;
+        background-color: blue;
     }
 </style>
 <link rel="stylesheet" href="https://community.canvaslms.com/resources/statics/267571/bootstrap.min.css?a=1500842953198">
@@ -131,7 +147,7 @@
 
 <!-- home section -->
 <section id="homeSection">
-    <div class="iframe-container">
+    <div class="iframe-container iframe-container-jiras">
         <iframe align="center" frameborder="0" height="1050" scrolling="no" seamless="yes" src="https://docs.google.com/a/instructure.com/spreadsheets/d/e/2PACX-1vTl_LWkPx_s2RRWdPylup5m4GKdj_NBaNSbmtDJAOUu9e7KXbJcicZAR1Y0sy50CtS61mZVsk3l-aV0/pubhtml?gid=761552034&single=true&widget=false&chrome=false"
             width="820">
         </iframe>
@@ -144,8 +160,17 @@
     <div class="container stats-container">
         <ul class="statsList">
             <li>June</li>
+            <div class="hideItem">
+                <h1>stuff here</h1>
+            </div>
             <li>July</li>
+            <div class="hideItem">
+                <h1>More stuff</h1>
+            </div>
             <li>August</li>
+            <div class="hideItem">
+                <h1>and more!</h1>
+            </div>
         </ul>
     </div>
 </section>
@@ -153,21 +178,32 @@
 
 <!-- shifts section -->
 <section id="shifts">
-    <h1>shifts</h1>
+    <div class="container shifts-container">
+        <iframe src="https://docs.google.com/spreadsheets/d/1U6ROqJ9C0HSS6wfRPEbnVrajjotc64HQViRb3TafAFc/pubhtml?gid=0&widget=false&chrome=false"
+            width="100%" height="500"></iframe>
+    </div>
 </section>
 <!-- end of shifts section -->
 
 <!-- jiras section  -->
 <section id="jiras">
     <div class="iframe-container">
-        <iframe src="https://instructure.atlassian.net/plugins/servlet/Wallboard/?dashboardId=29311" width="100%" height="1200"></iframe>
+        <iframe src="https://instructure.atlassian.net/plugins/servlet/Wallboard/?dashboardId=29311" width="100%" height="1300"></iframe>
     </div>
 </section>
 <!-- end of jiras section -->
 
 <!-- help section -->
 <section id="help">
-    <h1>help</h1>
+    <div class="container-help">
+        <div class="container">
+            <ol>
+                <li>Support Documentation</li>
+                <li>Neighbor</li>
+            </ol>
+        </div>
+
+    </div>
 </section>
 <!-- end of help section -->
 
@@ -216,5 +252,11 @@
         $(element).fadeIn('slow');
         $(tab).addClass('btn-active');
     };
+
+    $('.statsList > li').each(function () {
+        $(this).on('click', function () {
+            $(this).next('div').slideToggle();
+        });
+    });
 
 </script>
